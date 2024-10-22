@@ -1,0 +1,44 @@
+services:
+    web:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        container_name: php_apache
+        volumes:
+            - ./src:/var/www
+        ports:
+            - "8080:80"
+        networks:
+            - app-network
+
+    db:
+        image: mysql:8.0
+        container_name: mysql_db
+        environment:
+            MYSQL_ROOT_PASSWORD: rootpassword
+            MYSQL_DATABASE: blog_db
+            MYSQL_USER: blog_user
+            MYSQL_PASSWORD: blog_password
+        volumes:
+            - db_data:/var/lib/mysql
+            - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+        ports:
+            - "3306:3306"
+        networks:
+            - app-network
+
+    adminer:
+        image: adminer
+        container_name: adminer
+        environment:
+            - ADMINER_DESIGN=dracula
+        ports:
+            - "8081:8080"
+        networks:
+            - app-network
+
+volumes:
+    db_data:
+
+networks:
+    app-network:
