@@ -54,3 +54,17 @@ You can use Adminer to manage your MySQL database.
 ---
 
 Enjoy working with **MyBlogMVC**
+
+## Troubleshooting
+
+### Common Issues
+
+#### Database Connection Error
+
+If you encounter the following error:
+
+```
+Fatal error: Uncaught PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/core/Model.php:49 Stack trace: #0 /var/www/core/Model.php(49): PDO->__construct('mysql:host=db;d...', 'blog_user', Object(SensitiveParameterValue)) #1 /var/www/core/Model.php(13): Core\Model::dbConnect() #2 /var/www/app/controllers/ArticleController.php(13): Core\Model::getById('7') #3 /var/www/core/Router.php(42): App\Controllers\ArticleController->show('electric-car-re...', '7') #4 /var/www/html/index.php(29): Core\Router->toController() #5 {main} thrown in /var/www/core/Model.php on line 49
+```
+
+This indicates that the database has not finished initializing. The process may take a few more seconds. Please wait and try accessing the project again.

@@ -1,6 +1,11 @@
 <?php require('layouts/header.php'); ?>
 
-<h1>Home Page</h1>
+<header class="header home-header">
+    <div class="logo-container">
+        <img src="/logo.svg" alt="logo">
+    </div>
+    <h1>Les Articles à Ne Pas Manquer</h1>
+</header>
 
 <?php if (!empty($articles)): ?>
     <ul class="article-list">
@@ -8,15 +13,15 @@
             <li>
                 <a href="<?= $article->getUrl() ?>" class="article-card">
                     <div class="left">
-                    <!-- <img src="<?= $article->image ?>" alt=""> -->
-                    <img src="https://images.pexels.com/photos/20787/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
+                    <img src="<?= $article->image_url ?>" alt="">
                     <div class="date">
-                            2024
-                        </div>
+                           <?= (new DateTime($article->created_at))->format('d/m/Y') ?>
+                    </div>
                     </div>
                     <div class="right">
                         <h4 class="title2"><?= $article->title ?></h4>
-                        <p class="content-preview"><?= $article->content ?></p>
+                        <p class="content-preview"><?= $article->content_preview; ?></p>
+
                     </div>
                 </a>
             </li>
