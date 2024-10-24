@@ -3,7 +3,7 @@
 <h1>Home Page</h1>
 
 <?php if (!empty($articles)): ?>
-    <ul>
+    <ul class="article-list">
         <?php foreach ($articles as $article): ?>
             <li>
                 <a href="<?= $article->getUrl() ?>" class="article-card">
