@@ -1,6 +1,7 @@
 :root {
   --background-color: hsl(32, 95%, 85%);
   --text-color: #101010;
+  --text-color-impact: #0073e6;
   --header-background-color: hsl(32, 95%, 15%);
   --header-text-color: rgb(212, 212, 212);
   --logo-background-color: hsl(32, 95%, 90%);
@@ -30,6 +31,7 @@ h6 {
 
 .title2 {
   font-size: 1.1rem;
+  color: var(--text-color-impact);
 }
 
 .content-preview {
@@ -167,11 +169,13 @@ h6 {
 /* content article style */
 .h1 {
   font-size: 2rem;
-  color: #0073e6;
+  color: var(--text-color-impact);
+  margin-bottom: 1rem;
 }
 .h2 {
   font-size: 1.5rem;
-  color: #0073e6;
+  color: var(--text-color-impact);
+  margin-bottom: 0.5rem;
 }
 .p {
   margin-bottom: 1rem;
@@ -182,4 +186,20 @@ h6 {
 }
 .li {
   margin-bottom: 0.5rem;
+}
+.strong {
+  font-weight: 700;
+}
+
+/* page 404*/
+
+.page-404 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100dvh;
+}
+
+.page-404 .title2 {
+  font-size: 3rem;  
 }

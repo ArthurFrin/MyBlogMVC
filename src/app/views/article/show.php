@@ -16,7 +16,6 @@ if (!empty($article)) {
     </div>
     <article class="article-container">
         <?= $article->content; ?>
-        <p><a href="<?= $article->getUrl(); ?>">Read more</a></p>
     </article>
 <?php
 } else {

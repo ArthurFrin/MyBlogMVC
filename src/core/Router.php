@@ -44,7 +44,7 @@ class Router
             }
         }
         if(!isset($controller)) {
-            echo '404';
+            require('../app/views/404.php');
         }
 
 

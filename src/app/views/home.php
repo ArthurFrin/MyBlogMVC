@@ -4,7 +4,7 @@
     <div class="logo-container">
         <img src="/logo.svg" alt="logo">
     </div>
-    <h1>Les Articles à Ne Pas Manquer</h1>
+    <h1>Articles to read not to be missed</h1>
 </header>
 
 <?php if (!empty($articles)): ?>
