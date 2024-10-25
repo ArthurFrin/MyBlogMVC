@@ -50,6 +50,12 @@ http://localhost:8080
 http://localhost:8081
 
 You can use Adminer to manage your MySQL database.
+default connection:
+- System: MySQL
+- Server: db
+- Username: blog_user
+- Password: blog_password
+- Database: blog_db
 
 ---
 
